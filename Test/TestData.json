@@ -1,0 +1,111 @@
+[
+    {
+        "entity" : "Company",
+        "id" : "047F6F9C-913D-4054-A5A3-5520873211CE",
+        "attributes" : {
+            "title" : "Company Name"
+        },
+        "relations" : {
+            "departments" : [
+                "10577278-3A65-4865-B7C6-99C05D411B71",
+                "5B9F0B71-6CAF-4D15-B295-254F6C013050"
+            ]
+        }
+    },
+    {
+        "entity" : "Department",
+        "id" : "10577278-3A65-4865-B7C6-99C05D411B71",
+        "attributes" : {
+            "label" : "D1"
+        },
+        "relations" : {
+            "company" : "047F6F9C-913D-4054-A5A3-5520873211CE",
+            "members" : [
+                "562AD967-74D5-4585-BB63-5E000AC6233B",
+                "8BCCD8E4-A2F5-4B6F-B00C-4ECDC69B1D27",
+                "AFCDE294-F9A3-4097-831C-D0C1BBDB7171"
+            ]
+        }
+    },
+    {
+        "entity" : "Department",
+        "id" : "5B9F0B71-6CAF-4D15-B295-254F6C013050",
+        "attributes" : {
+            "label" : "D2"
+        },
+        "relations" : {
+            "company" : "047F6F9C-913D-4054-A5A3-5520873211CE",
+            "members" : [
+                "01C4FC62-99F6-4FA1-80AE-57963467621B",
+                "541315CC-BAA4-4739-B399-3AFB14F1911A",
+                "AB9F1A3D-C12B-4A78-9BE6-059A9BA6C983"
+            ]
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "562AD967-74D5-4585-BB63-5E000AC6233B",
+        "attributes" : {
+            "name" : "Aaron",
+            "since" : "2015-02-01T10:00:00+08:00"
+        },
+        "relations" : {
+            "department" : "10577278-3A65-4865-B7C6-99C05D411B71"
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "8BCCD8E4-A2F5-4B6F-B00C-4ECDC69B1D27",
+        "attributes" : {
+            "name" : "Benjamin",
+            "since" : "2016-01-01T00:00:00+02:00"
+        },
+        "relations" : {
+            "department" : "10577278-3A65-4865-B7C6-99C05D411B71"
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "AFCDE294-F9A3-4097-831C-D0C1BBDB7171",
+        "attributes" : {
+            "name" : "Celia",
+            "since" : "2013-12-01T11:36:24+00:00"
+        },
+        "relations" : {
+            "department" : "10577278-3A65-4865-B7C6-99C05D411B71"
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "01C4FC62-99F6-4FA1-80AE-57963467621B",
+        "attributes" : {
+            "name" : "Derek",
+            "since" : "2012-10-1T14:30:00+00:00"
+        },
+        "relations" : {
+            "department" : "5B9F0B71-6CAF-4D15-B295-254F6C013050"
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "541315CC-BAA4-4739-B399-3AFB14F1911A",
+        "attributes" : {
+            "name" : "Emilie",
+            "since" : "2014-02-15T10:04:19+00:00"
+        },
+        "relations" : {
+            "department" : "5B9F0B71-6CAF-4D15-B295-254F6C013050"
+        }
+    },
+    {
+        "entity" : "Employee",
+        "id" : "AB9F1A3D-C12B-4A78-9BE6-059A9BA6C983",
+        "attributes" : {
+            "name" : "Frank",
+            "since" : "2016-10-01T09:00:00+00:00"
+        },
+        "relations" : {
+            "department" : "5B9F0B71-6CAF-4D15-B295-254F6C013050"
+        }
+    }
+]
