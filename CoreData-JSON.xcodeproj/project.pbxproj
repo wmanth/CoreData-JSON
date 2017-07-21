@@ -35,7 +35,7 @@
 		199AE0311EF67C270004FB18 /* CoreData+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreData+JSON.h"; sourceTree = "<group>"; };
 		199AE0321EF67C270004FB18 /* CoreData+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CoreData+JSON.m"; sourceTree = "<group>"; };
 		199AE03E1EF67DA70004FB18 /* libCoreDataJSON-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCoreDataJSON-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		199AE04C1EF67FF90004FB18 /* CoreDataJSON-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreDataJSON-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		199AE04C1EF67FF90004FB18 /* CoreDataJSON-macOS-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreDataJSON-macOS-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		199AE04E1EF67FF90004FB18 /* CoreDataJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataJSONTest.swift; sourceTree = "<group>"; };
 		199AE0501EF67FF90004FB18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199AE0581EF6BCD30004FB18 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			children = (
 				199AE02E1EF67C270004FB18 /* libCoreDataJSON-iOS.a */,
 				199AE03E1EF67DA70004FB18 /* libCoreDataJSON-macOS.a */,
-				199AE04C1EF67FF90004FB18 /* CoreDataJSON-Test.xctest */,
+				199AE04C1EF67FF90004FB18 /* CoreDataJSON-macOS-Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 			productReference = 199AE03E1EF67DA70004FB18 /* libCoreDataJSON-macOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		199AE04B1EF67FF90004FB18 /* CoreDataJSON-Test */ = {
+		199AE04B1EF67FF90004FB18 /* CoreDataJSON-macOS-Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 199AE0541EF67FF90004FB18 /* Build configuration list for PBXNativeTarget "CoreDataJSON-Test" */;
+			buildConfigurationList = 199AE0541EF67FF90004FB18 /* Build configuration list for PBXNativeTarget "CoreDataJSON-macOS-Test" */;
 			buildPhases = (
 				199AE0481EF67FF90004FB18 /* Sources */,
 				199AE0491EF67FF90004FB18 /* Frameworks */,
@@ -175,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = "CoreDataJSON-Test";
+			name = "CoreDataJSON-macOS-Test";
 			productName = "CoreDataJSON-Test";
-			productReference = 199AE04C1EF67FF90004FB18 /* CoreDataJSON-Test.xctest */;
+			productReference = 199AE04C1EF67FF90004FB18 /* CoreDataJSON-macOS-Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 			targets = (
 				199AE02D1EF67C270004FB18 /* CoreDataJSON-iOS */,
 				199AE03D1EF67DA70004FB18 /* CoreDataJSON-macOS */,
-				199AE04B1EF67FF90004FB18 /* CoreDataJSON-Test */,
+				199AE04B1EF67FF90004FB18 /* CoreDataJSON-macOS-Test */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		199AE0541EF67FF90004FB18 /* Build configuration list for PBXNativeTarget "CoreDataJSON-Test" */ = {
+		199AE0541EF67FF90004FB18 /* Build configuration list for PBXNativeTarget "CoreDataJSON-macOS-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				199AE0551EF67FF90004FB18 /* Debug */,
