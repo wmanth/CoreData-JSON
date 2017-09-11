@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSManagedObjectContext (JSON)
 
 - (void)importJSONData:(NSData *)jsonData;
+- (NSData * _Nullable)exportPersistentStore;
 - (NSData * _Nullable)jsonData;
 
 @end

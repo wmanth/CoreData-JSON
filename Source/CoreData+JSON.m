@@ -161,19 +161,20 @@ static NSString * const JSONEntityRelationsKey  = @"relations";
 
          if (relationshipDescription.toMany)
          {
-             NSAssert([jsonRelations isKindOfClass:NSArray.class], @"");
+             NSAssert([jsonRelations isKindOfClass:NSArray.class], @"Relation '%@' is a to-many relationship", relationshipName);
              NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[jsonRelations count]];
              for (NSString *jsonRelation in jsonRelations)
              {
                  NSManagedObject *object = objectMapping[jsonRelation];
-                 [objects addObject:object];
+                 NSAssert(object, @"Object for relation '%@' %@ not found!", relationshipName, jsonRelation);
+                 if (object) [objects addObject:object];
              }
              id set = relationshipDescription.ordered ? [NSOrderedSet orderedSetWithArray:objects] : [NSSet setWithArray:objects];
              [self setPrimitiveValue:set forKey:relationshipName];
          }
          else
          {
-             NSAssert([jsonRelations isKindOfClass:NSString.class], @"");
+             NSAssert([jsonRelations isKindOfClass:NSString.class], @"Relation '%@' is a to-one relationship", relationshipName);
              NSManagedObject *object = objectMapping[jsonRelations];
              [self setPrimitiveValue:object forKey:relationshipName];
          }
@@ -261,7 +262,7 @@ static NSString * const JSONEntityRelationsKey  = @"relations";
     NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
 
     // if parsing the JSON data fails return nil
-    NSAssert(!error, @"Error: JSON data could not be parsed successfully!");
+    NSAssert(!error, @"JSON data could not be parsed successfully!");
     if (error) return;
 
     NSMutableDictionary<NSString *, NSManagedObject *> *objectDict = [[NSMutableDictionary alloc] initWithCapacity:jsonObjects.count];
@@ -289,6 +290,20 @@ static NSString * const JSONEntityRelationsKey  = @"relations";
         NSManagedObject *object = objectDict[objectId];
         [object finalizeWithJSONRelations:relationDict[objectId] objectMapping:objectDict];
     }];
+}
+
+- (NSData * _Nullable)exportPersistentStore
+{
+    // first fetch all entities to register their objects in the context
+    for (NSEntityDescription *entity in self.persistentStoreCoordinator.managedObjectModel.entities)
+    {
+        NSError *error = nil;
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity.name];
+        [self executeFetchRequest:fetchRequest error:&error];
+        NSAssert(!error, @"Could not fetch objects of entity '%@'", entity.name);
+    }
+
+    return self.jsonData;
 }
 
 - (NSData * _Nullable)jsonData
